@@ -14,12 +14,8 @@ export default function Home() {
           <LeftMenu />
         </div>
         <div className="content">
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          <Post key="1" />
+          <Post key="2" />
         </div>
         <div className="rightSide">
           <SideComments />
