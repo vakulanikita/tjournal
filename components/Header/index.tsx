@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
         <IconButton>
           <NotificationIcon />
         </IconButton>
-        <NextLink href="profile/1">
+        <NextLink href="/profile/1">
           <a className="d-flex align-center">
             <Avatar
               className={styles.avatar}
