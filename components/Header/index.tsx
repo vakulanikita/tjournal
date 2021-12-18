@@ -43,12 +43,16 @@ export const Header: React.FC = () => {
         <IconButton>
           <NotificationIcon />
         </IconButton>
-        <Avatar
-          className={styles.avatar}
-          alt="Remy Sharp"
-          src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"
-        />
-        <ArrowBottom />
+        <NextLink href="profile/1">
+          <a className="d-flex align-center">
+            <Avatar
+              className={styles.avatar}
+              alt="Remy Sharp"
+              src="https://leonardo.osnova.io/5ffeac9a-a0e5-5be6-98af-659bfaabd2a6/-/scale_crop/108x108/-/format/webp/"
+            />
+            <ArrowBottom />
+          </a>
+        </NextLink>
       </div>
     </Paper>
   );
