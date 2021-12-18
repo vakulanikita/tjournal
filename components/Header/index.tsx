@@ -1,4 +1,5 @@
 import React from 'react';
+import NextLink from 'next/link'
 import { Paper, Button, IconButton, Avatar } from '@material-ui/core';
 import {
   SearchOutlined as SearchIcon,
@@ -29,9 +30,11 @@ export const Header: React.FC = () => {
           <input placeholder="Поиск" />
         </div>
 
-        <Button variant="contained" className={styles.penButton}>
-          Новая запись
-        </Button>
+        <NextLink href="/write">
+          <Button variant="contained" className={styles.penButton}>
+            Новая запись
+          </Button>
+        </NextLink>
       </div>
       <div className="d-flex align-center">
         <IconButton>
