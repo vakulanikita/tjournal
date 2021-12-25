@@ -1,26 +1,40 @@
-import Head from 'next/head';
-
-import { Header } from '../components/Header';
-import { LeftMenu } from '../components/LeftMenu';
 import { Post } from '../components/Post';
-import { SideComments } from '../components/SideComments';
+import { MainLayout } from '../layouts/main-layout';
+import { Api } from '../utils/api';
+import { NextPage } from 'next';
+import { PostItem } from '../utils/api/types';
 
-export default function Home() {
-  return (
-    <div>
-      <Header />
-      <div className="wrapper">
-        <div className="leftSide">
-          <LeftMenu />
-        </div>
-        <div className="content">
-          <Post key="1" />
-          <Post key="2" />
-        </div>
-        <div className="rightSide">
-          <SideComments />
-        </div>
-      </div>
-    </div>
-  );
+interface HomeProps {
+  posts: PostItem[];
 }
+
+const Home: NextPage<HomeProps> = ({ posts }) => {
+  console.log(posts);
+  return (
+    <MainLayout>
+      {posts.map((obj) => (
+        <Post key={obj.id} id={obj.id} title={obj.title} description={obj.description} />
+      ))}
+    </MainLayout>
+  );
+};
+
+export const getServerSideProps = async (ctx) => {
+  try {
+    const posts = await Api().post.getAll();
+    return {
+      props: {
+        posts,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+  }
+  return {
+    props: {
+      posts: null,
+    },
+  };
+};
+
+export default Home;

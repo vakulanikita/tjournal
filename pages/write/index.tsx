@@ -1,8 +1,7 @@
 import React from 'react';
-import { NextPage } from "next";
-
-import { MainLayout } from "../layouts/main-layout";
-import { WriteForm } from "../components/WriteForm";
+import { NextPage } from 'next';
+import { MainLayout } from '../../layouts/main-layout';
+import { WriteForm } from '../../components/WriteForm';
 
 const WritePage: NextPage = () => {
   return (
@@ -12,4 +11,4 @@ const WritePage: NextPage = () => {
   );
 };
 
-export default WritePage
+export default WritePage;
