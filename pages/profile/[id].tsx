@@ -11,7 +11,7 @@ import { MainLayout } from '../../layouts/main-layout';
 export default function Profile() {
   return (
     <MainLayout contentFullWidth hideComments>
-      <Paper className="pl-20 pr-20 pt-20 mb-30" elevation={0}>
+      <Paper className="p-20 mb-30" elevation={0}>
         <div className="d-flex justify-between">
           <div>
             <Avatar
@@ -44,17 +44,17 @@ export default function Profile() {
         </div>
         <Typography>На проекте с 15 сен 2016</Typography>
 
-        <Tabs className="mt-20" value={0} indicatorColor="primary" textColor="primary">
+        {/* <Tabs className="mt-20" value={0} indicatorColor="primary" textColor="primary">
           <Tab label="Статьи" />
           <Tab label="Комментарии" />
           <Tab label="Закладки" />
-        </Tabs>
+        </Tabs> */}
       </Paper>
       <div className="d-flex align-start">
         <div className="mr-20 flex">
-          <Post />
+          {/* <Post /> */}
         </div>
-        <Paper style={{ width: 300 }} className="p-20 mb-20" elevation={0}>
+        {/* <Paper style={{ width: 300 }} className="p-20 mb-20" elevation={0}>
           <b>Подписчики</b>
           <div className="d-flex mt-15">
             <Avatar
@@ -66,7 +66,7 @@ export default function Profile() {
               src="https://leonardo.osnova.io/2d20257c-fec5-4b3e-7f60-055c86f24a4d/-/scale_crop/108x108/-/format/webp/"
             />
           </div>
-        </Paper>
+        </Paper> */}
       </div>
     </MainLayout>
   );
